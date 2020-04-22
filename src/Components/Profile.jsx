@@ -31,7 +31,7 @@ const useStyles = (theme) => ({
   },
   heroContent: {
     background: "linear-gradient(30deg, #A8D0DB 30%, #5E548E 95%)",
-    //backgroundColor: "#E6DBD0",
+
     padding: theme.spacing(4, 0, 3),
   },
   media: {
@@ -93,7 +93,6 @@ const useStyles = (theme) => ({
   },
 });
 
-// previous code starts here
 class Profile extends React.Component {
   state = {
     profile: {},
@@ -122,7 +121,6 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    console.log("fetching genres?");
     this.fetchProfile();
   }
 
@@ -226,6 +224,7 @@ class Profile extends React.Component {
                 })}
               </Grid>
             </Container>
+            {/* Just for show now */}
             <div className={classes.badges}>
               <Grid className={classes.badgeItems} container xs={12}>
                 <Grid className={classes.badge} xs={3}>

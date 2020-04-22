@@ -4,9 +4,8 @@ const extractTitleId = (titlePath) => {
   }
 
   const getPath = titlePath;
-  // example: /title/tt8266310/
+
   const titleId = getPath.match(/([t]{2})\w+/);
-  // console.log("mock result --->", titleId[0]);
 
   return titleId[0];
 };

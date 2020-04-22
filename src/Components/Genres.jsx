@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import config from "../config.json";
 import ErrorHandler from "./ErrorHandler";
-// items for movies genres to display in grid
 import AppBar from "@material-ui/core/AppBar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -204,7 +203,6 @@ class Genres extends React.Component {
               gutterBottom
             >
               Pick your favourites
-              {/* // this is here to display changes saved and error message under title */}
               {this.state.message}
               <ErrorHandler
                 apierrors={this.state.error}

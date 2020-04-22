@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   GoogleMap,
   withScriptjs,
   withGoogleMap,
   Marker,
   InfoWindow,
-} from 'react-google-maps';
-import UserLocation from './UserLocation';
-import * as api from '../Utils/api';
+} from "react-google-maps";
+import UserLocation from "./UserLocation";
+import * as api from "../Utils/api";
 class NewMovieMap extends Component {
   state = {
     coordinate: null,
@@ -51,13 +51,11 @@ class NewMovieMap extends Component {
     });
   };
   componentDidMount() {
-    //this.setState({isLoading:true})
     this.displayMarkers();
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.coordinates !== prevProps.coordinates) {
-      // this.setState({isLoading:true})
       this.displayMarkers();
     }
   }

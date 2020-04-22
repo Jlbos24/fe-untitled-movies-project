@@ -64,7 +64,7 @@ class Gallery extends Component {
   render() {
     const { classes } = this.props;
     if (this.state.isLoading) return "Loading ....";
-    // if (this.state.userPics == "") return "You have not snapped any shots!";
+
     if (!this.state.isLoading) {
       return (
         <Container className={classes.bg} component="main" maxWidth="xs">

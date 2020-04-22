@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
-import {
-  // GoogleMap,
-  // Marker,
-  // DirectionsService,
-  DirectionsRenderer,
-  // LatLng,
-} from 'react-google-maps';
-import ViewToggler from './ViewToggler';
-import MovieCard from './MovieCard';
-import ViewTogglerDirections from './ViewTogglerDirections';
-import ViewTogglerInfo from './ViewTogglerInfo';
+import React, { Component } from "react";
+import { DirectionsRenderer } from "react-google-maps";
+import ViewToggler from "./ViewToggler";
+import MovieCard from "./MovieCard";
+import ViewTogglerDirections from "./ViewTogglerDirections";
+import ViewTogglerInfo from "./ViewTogglerInfo";
 
 class RouteCalculator extends Component {
   state = {
@@ -19,7 +13,6 @@ class RouteCalculator extends Component {
     movieInfo: null,
   };
 
-  // panelUpdate = () => {}
   componentDidMount() {
     this.setState({ userLocation: this.props.userLocation });
   }
@@ -55,25 +48,21 @@ class RouteCalculator extends Component {
           ),
 
           waypoints: this.props.stops.map((stop) => {
-            // console.log(stop.lat);
             return {
               location: new window.google.maps.LatLng(stop.lat, stop.lng),
             };
           }),
-          travelMode: 'DRIVING',
+          travelMode: "DRIVING",
           optimizeWaypoints: true,
         },
         (result, status) => {
-          // console.log("this is steps", result.routes[0].legs[0].steps);
-
           if (status === window.google.maps.DirectionsStatus.OK) {
             this.setState({
               directions: { ...result },
               textDirections: true,
-              // polyline: result.routes[0].overview_polyline,
             });
           } else {
-            console.dir('console.dir', result);
+            console.dir("console.dir", result);
           }
         }
       );
@@ -86,7 +75,7 @@ class RouteCalculator extends Component {
         {this.state.directions && (
           <DirectionsRenderer
             defaultDirections={this.state.directions}
-            panel={document.getElementById('panel')}
+            panel={document.getElementById("panel")}
           />
         )}
         <ViewTogglerDirections>

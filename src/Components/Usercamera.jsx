@@ -30,6 +30,7 @@ class Usercamera extends Component {
   handleTakePhotoAnimationDone = (dataUri) => {};
 
   handleCameraError = (error) => {
+    // Error handler needed here
     console.log(error);
   };
 
